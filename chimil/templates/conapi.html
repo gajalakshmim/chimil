@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  <p>Here I am going to utilize some of the public apis and power up my web application!</p>
+  <h5>These ants from GitHub api</h5>
+  <img src={{picture}} width=20 height=20> <img src={{picture}} width=20 height=20> 
+  <img src={{picture}} width=20 height=20> <img src={{picture}} width=20 height=20>
+  <img src={{picture}} width=20 height=20> <img src={{picture}} width=20 height=20>   
+   <!--<h5>{{picture}}</h5>-->
+   <h2>GitHub API</h2>
+   <h5>To see the number of public repositories a user has, enter a username here.</h5>
+  <form action='getgit' method="get">
+  {% csrf_token %}
+    Enter Username: <input type="text" name="username">
+    <input type="submit" value="Submit">
+  </form>
+  {% if not user.message%}
+     <p id="showresult"><strong>{{user.login }}</strong> has <strong>{{ user.public_repos }}</strong> public repositories.</p>
+  {% else %}
+     <p id="showresult"><strong>{{username}} is {{user.message}}</strong></p>
+  {%endif%}
+  <br>
+  <br>
+  <hr>
+  <!--Using Dictionary API-->
+  <h2>Oxford Dictionary</h2>
+  <h5>Do you want to find the meaning of a word? Click </h5>
+
+  <form action='getword' method="get">
+    {{ form.as_p }}
+    <button type="submit">search</button>
+  </form>
+  {%if search_result %}
+  
+    {% if search_result.success %}
+      <p><em>Word: {{search_result.word}}</em></p>
+      <p><em>Pronunciation: {{search_result.pronunciation}}
+      </em></p>
+      {% for mydef in search_result.definitions%}
+        
+          <p><em>type: {{mydef.type}},<br>          
+          definition: {{mydef.definition}},<br>
+          example: {{mydef.example}},<br>
+          image_url:{{mydef.image_url}}<br>
+          emoji:{{mydef.emoji}}<em></h4></p>
+      
+      {% endfor %}
+    {% else %}
+      <p><em>{{search_result.success}}</em></p>
+    {% endif %}
+  {% endif %}
+  <br><br>
+  <hr><br><br>
+
+
+{% endblock %}

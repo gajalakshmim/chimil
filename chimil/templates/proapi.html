@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<p>
+    Here is the api for the employee model from my web application.<br>
+    I used django serializer to get the data from database and display in json format in this <br>
+    web page<br>
+</p>
+<h4>Employee API</h4>
+<h5>json value of the employee api</h5>
+<pre>{{data}}</pre>
+<p>Also I tried using HyperlinkedModelSerializer and default router urls to display the api.</p>
+<a href ="/ProvideAPI/emp">Click EMP for view and add models</a>
+
+
+
+{%endblock%}

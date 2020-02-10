@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chimil</title>
+    {% load static %}
+<link rel='stylesheet' href="{% static 'styles/chimstyle.css' %}">
+
+    <!--link href="chimstyle.css" rel="stylesheet"/-->
+</head>
+<body>
+<div id="container">
+<header><h1>Chimil</h1></header>
+
+
+<article>
+        <nav>
+                <a href="/Home">  Home</a>   |
+                <a href="/Calculator">  Calculator</a>  |
+                <a href="/ConsumeAPI"> Consume API</a>  |
+                <a href="/ProvideAPI"> Provide API</a>  |      
+                <a href="/Recipes">  Recipes</a>    |    
+                <a href="/About">  About</a>    |  
+                <a href="/Contact Us">  Contact Us</a> 
+        </nav>
+    
+    {% block content%}
+    <p>Documentation: This is an attempt to learn AWS. At first I created<br>
+        an instance using my free tier. I chose t2.micro Windows Server 2012 R2 as operating system and free tier options for <br>
+        rest. And then boom, my instance was up and running, with a volume attached.</p>
+
+    <p> Then installed a IIS web server on my instance. And I'm going to implement this web application in it
+    </p>
+
+        <h4>My exploration list</h4>
+            <ul>
+                <li>A calculator app</li>
+                <li>Usage of public APIs in our application</li>
+                <li>A student app</li>
+                <li>A weather app</li>
+                <li>A News Feed app</li>
+                <li>Sunshine Products app</li>
+                <li>Family share app</li>
+            </ul>
+    {%endblock%}
+</article>
+
+<aside>
+    <form>
+        <input type="text" name="first-name" placeholder="FirstName"/>
+        <textarea rows="4" name="description">"Say something"</textarea>
+        <input type="submit" name="submit"/>
+    </form>
+</aside>
+
+<footer>Developed by Gajalakshmi</footer>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<form action="compute" method="POST" name="calcu">
+{% csrf_token %}
+    Enter 1st number: <input type="text" name='num1'><br>
+    Enter 2nd number: <input type="text" name='num2'><br>
+    <input type="submit"  name="operation" value="Addition">  
+    <input type="submit"  name="operation" value="Subtraction"> 
+    <input type="submit"  name="operation" value="Multiplication">  
+    <input type="submit"  name="operation" value="Division">
+</form>
+<h2>Result :{{result}}</h2>
+{%endblock%}

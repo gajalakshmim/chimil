@@ -1,0 +1,53 @@
+body
+{
+    background-color: rgba(241, 163, 202, 0.363);
+}
+#container
+{
+ background-color: white; width: 1000px; margin:0 auto;
+}
+header{
+    padding: 15px; margin:15px 15px;
+    text-align: center; border: 15px rgba(204, 101, 153, 0.363) solid; height:300px;
+    background-color: lightpink;
+}
+nav{
+    font-size:larger; background-color:lightpink; block-size: 30px;margin: 15px 15px; padding-left: 10px;
+}
+h1{
+    color: white; font-size: 100px;
+}
+aside{
+    width: 250px; float:right; margin: 0 0 5px 5px; background-color: whitesmoke; padding: 5px; min-height: auto;
+}
+article {
+    max-width: 735px; float: left; clear: both; padding-left: 70px; padding-bottom: 100px;
+}
+
+h4{
+    font-size: 25px; font-family: 'Lucida Grande';
+}
+ul{
+    font-family: 'Lucida Grande'; font-size: 20px;
+}
+footer{
+    height:50px; background-color: rgb(130, 163, 119); color: white; text-align:left; font-size:25px; 
+    float: bottom; clear: both;
+}
+input,textarea{
+    display: table;
+    margin-top: 10px;
+}
+input[name="num1"]{
+    display:flex;
+    flex-direction: row;
+}
+form{
+   
+    margin-top: 10px;
+}
+form[name="calcu"]{
+    width: 75%;
+    margin-left:70px;
+    padding-left: 25px;
+}
